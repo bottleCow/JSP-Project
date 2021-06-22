@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="memberns">
+	<!-- 로그인 -->
+	<select id="select" parameterType="string" resultType="member">
+		select * from member where member_id=#{member_id}
+	</select>
+	
+	<!-- 회원가입 -->
+	<insert id="insert" parameterType="member">
+		<!-- 회원가입시 회원번호 1씩 증가 -->
+		<selectKey keyProperty="member_num" resultType="integer" order="BEFORE">
+			select nvl(max(member_num),0) + 1 member_num from member 
+		</selectKey>
+		insert into member values (#{member_num}, #{member_id}, #{member_pw}, #{member_nickname}, to_char(sysdate, 'RRRR.MM.DD HH24:MI:SS'), #{member_email}, 'n', '0')
+	</insert>
+	
+	<!-- 수정 -->
+	<update id="update" parameterType="member">
+		update member set member_pw=#{member_pw}, member_nickname=#{member_nickname}, member_email=#{member_email} where member_id=#{member_id}
+	</update>
+	
+	<!-- delete, 진짜 삭제하지않고 del컬럼 값을 y로 수정 y=탈퇴한회원, n=탈퇴하지않은회원 -->
+	<update id="delete" parameterType="string">
+		update member set member_del='y' where member_id=#{member_id}
+	</update>
+	
+	<!-- restore, del컬럼 값을 n로 수정 y=탈퇴한회원, n=탈퇴하지않은회원 -->
+	<update id="restore" parameterType="string">
+		update member set member_del='n' where member_id=#{member_id}
+	</update>
+	
+	<!-- 회원 총 수 -->
+	<select id="total" resultType="int">
+		select count(*) from member
+	</select>
+	
+	<!-- list, 회원전체 리스트 -->
+	<select id="memberList" parameterType="map" resultType="member">
+		select * from (select rowNum rn, a.* from
+		(select * from member order by member_num desc) a)
+		where rn between ${startRow} and ${endRow}
+	</select>
+	
+	<!-- 탈퇴 회원 수 체크 -->
+	<select id="chkMember" parameterType="string" resultType="string">
+		select member_del from member where member_id=#{member_id}
+	</select>
+</mapper> 

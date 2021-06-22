@@ -1,0 +1,449 @@
+/*
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+html {
+	font-size: 10px;
+	min-width: 1440px;
+	height: 100%;
+	margin: 0 auto;
+	overflow-x: hidden;
+}
+
+body {
+	line-height: 1;
+    text-align: center;
+    margin: 0 auto;
+    background-color: rgb(34, 37, 41);
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+input, textarea, button {
+	appearance: none;
+	border-radius: 0;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+}
+*/
+#red-team {
+	text-decoration: red; color: red;
+}
+#blue-team {
+	text-decoration: blue; color: blue;
+}
+
+.flex-nowrap {
+    background-color: rgb(34, 37, 41);
+}
+
+dl, dt, dd, ol, ul, li{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+ol, ul {
+	list-style: none;
+}
+.clearfix {
+	font-size: 115%;
+}
+.clearfix:after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+.wrap {
+	width: 100%;
+    height: 100%;
+    font-size: 10px;
+    line-height: 1;
+	border: 0;
+	padding: 0;
+    margin: 0 auto;
+    text-align: center;
+	vertical-align: baseline;
+    background-color: rgb(34, 37, 41);
+}
+
+.wrap .container {
+    width: 100%;
+    max-width: 720px;
+    margin: 80px auto 0 auto;
+}
+
+.wrap .container .logo {
+    width: 330px;
+    height: 150px;
+    margin: 0 auto;
+    cursor: pointer;
+    background: url("../images/tlol_logo_none.png") 0 0 no-repeat;
+}
+
+
+.wrap .container input[type="search"] {
+    font-size: 15px;
+    color: #333;
+    width: 50%;
+    height: 45px;
+    padding-left: 10px;
+    border-radius: 12px;
+    outline: none;
+    border: none;
+    box-shadow: 3px 3px 5px #a59a9a;
+}
+
+.wrap .container button {
+    font-size: 15px;
+    color: #000;
+    width: 6%;
+    margin-left: 10px;
+    height: 40px;
+    border-radius: 12px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    box-shadow: 3px 3px 5px #a59a9a;
+}
+
+.wrap .container button:hover {
+    opacity: 0.9;
+}
+
+.wrap .container button:active {
+    position: relative;
+    top:2px;
+    box-shadow: 3px 3px 2px #a59a9a;
+}
+
+.wrap .board-container h1 {
+    color: #fff;
+    font-size: 16px;
+    margin-top: 50px;
+}
+
+.wrap .board-container {
+    width: 1020px;
+    margin: 0 auto;
+}
+
+.wrap .board-container ul {
+	list-style: none;	
+}
+
+.wrap .board-container ul li {
+    float: left;
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+    vertical-align: middle;
+    width: 30%;
+    height: 250px;
+    margin: 40px 20px 0 0;
+    background-color: #191c20;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 6px;
+}
+
+/* result start */
+
+.wrap .result-container {
+    width: 80%;
+    /* margin: 0 auto; */
+    margin-left: 150px;
+}
+
+.wrap .result-container .profile {
+    font-size: 15px;
+    padding: 42px 0;
+    margin-top: 40px;
+    background-color: #191c20;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 6px;
+}
+
+.wrap .result-container ul li.record-box {
+    position: relative;
+    width: 100%;
+    float: left;
+    font-size: 13px;
+    padding: 25px 0;
+    margin-top: 30px;
+    background-color: #191c20;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 6px;
+    text-align: left;
+}
+
+.wrap .result-container ul li.record-box > ul.text {
+	display: inline-block;
+    width: 10%;
+}
+
+.wrap .result-container ul li.record-box > ul.text li {
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    padding: 5px 0;
+}
+
+.wrap .result-container ul li.record-box > ul.text li:nth-child(1) {
+    color: #c2c2c2;
+}
+
+.wrap .result-container ul li.record-box > ul.text li:nth-child(even) {
+    color: #696969;
+    font-size: 14px;
+}
+
+.wrap .result-container ul li.record-box > ul.text li.win {
+    color: #0088cc;
+}
+
+.wrap .result-container ul li.record-box > ul.text li.lose {
+    color: #d53f3a;
+}
+
+.wrap .result-container ul li.record-box > ul.add-magic {
+    position: relative;
+    display: inline-block;
+    width: 21%;
+    bottom: 10px;
+}
+
+.wrap .result-container ul li.record-box > ul.add-magic li {
+    float: left;
+    text-align: center;
+}
+
+.wrap .result-container ul li.record-box > ul.add-magic li > img {
+    width: 35%;
+    border-radius: 8px;
+}
+
+.wrap .result-container ul li.record-box > span.champion {
+    position: relative;
+    display: inline-block;
+    bottom: -4%;
+    right: 3%;
+    text-align: center;
+}
+
+.wrap .result-container ul li.record-box > span.champion img {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 25px;
+}
+
+.wrap .result-container ul li.record-box > span.champion > span {
+    display: inline-block;
+    color: #c2c2c2;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.wrap .result-container ul li.record-box > ul.kda {
+    display: inline-block;
+    position: absolute;
+    top: 58px;
+    width: 7%;
+}
+
+.wrap .result-container ul li.record-box > ul.kda li {
+	width: 100%;
+    display: inline-block;
+    line-height: 1.8;
+}
+
+.wrap .result-container ul li.record-box > ul.kda li span:first-child {
+    color: #fff;
+    padding-right: 10px;
+    text-align: left;
+}
+
+.wrap .result-container ul li.record-box > ul.kda li span:last-child {
+    float: right;
+    color: #696969;
+    text-align: right;
+}
+
+.wrap .result-container ul li.record-box > ul.team {
+    position: relative;
+    float: right;
+    width: 19%;
+}
+
+.wrap .result-container ul li.record-box > ul.team li img {
+    width: 12%;
+}
+
+.wrap .result-container ul li.record-box > ul.team.blue li a:link,
+.wrap .result-container ul li.record-box > ul.team.red li a:link {
+	line-height: 1.2;
+    text-decoration: none;
+}
+
+.wrap .result-container ul li.record-box > ul.team.blue li a:visited {
+    color: #0088cc;
+    font-size: 12px;
+    letter-spacing: -0.4px;
+}
+
+.wrap .result-container ul li.record-box > ul.team.red li a:visited {
+    color: #d53f3a;
+    font-size: 12px;
+    letter-spacing: -0.4px;
+}
+
+.wrap .result-container .profile > ul {
+    position: relative;
+    width: 100%;
+}
+
+.wrap .result-container .profile > ul li {
+    float: left;
+    color: #fff;
+    font-size: 15px;
+}
+
+.wrap .result-container .profile > ul li:nth-child(1) {
+    width: 15%;
+}
+
+.wrap .result-container .profile > ul li:nth-child(1) > img {
+    width: 60%;
+    margin: 15px auto 0;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.wrap .result-container .profile > ul li:nth-child(2) {
+    width: 17%;
+}
+
+.wrap .result-container .profile > ul li:nth-child(2) > p {
+    padding: 0;
+}
+
+.wrap .result-container .profile > ul li:nth-child(2) > p.user-nm {
+    color: #c6d3d7;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2.5px;
+    padding-top: 20px;
+    cursor: pointer;
+}
+
+.wrap .result-container .profile > ul li:nth-child(2) > p.user-nm:hover {
+    text-decoration: underline;
+}
+
+.wrap .result-container .profile > ul li:nth-child(2) > p.update-btn button {
+    color: #fff;
+    text-align: center;
+    border: 1px solid #006fa6;
+    border-radius: 25px;
+    background-color: #006fa6;
+    cursor: pointer;
+    padding: 12px 22px;
+    letter-spacing: 2px;
+}
+
+.wrap .result-container .profile > ul li:nth-child(2) > p.update-btn button:hover {
+    opacity: 0.8;
+}
+
+.wrap .result-container .profile > ul li:nth-child(2) > p.system-date {
+    color: #696969;
+    font-size: 13px;
+}
+
+.wrap .result-container .profile > ul li:nth-child(3) {
+    width: 65%;
+}
+
+.wrap .result-container .profile > ul li:nth-child(3) > img {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    top: 45px;
+    right: 235px;
+    margin: 0;
+}
+
+.wrap .result-container .profile > ul li:nth-child(3) > p.rank-info {
+    position: absolute;
+    width: 150px;
+    top: 18px;
+    right: 65px;
+    margin: 0;
+}
+
+.wrap .result-container .profile > ul li:nth-child(3) > p.rank-info span {
+    display: inline-block;
+    width: 100%;
+    font-size: 17px;
+    padding: 3px 0;
+}
+
+.wrap .result-container .profile > ul li:nth-child(3) > p.rank-info span.rank-nm {
+    color: #fff;
+}
+
+.wrap .result-container .profile > ul li:nth-child(3) > p.rank-info .rank-total > span {
+    width: 48%;
+    color: #47a447;
+    padding: 0;
+    text-align: right;
+}
+
+.wrap .result-container .profile > ul li:nth-child(3) > p.rank-info .rank-total > span:last-child {
+    color: #ed9c28;
+    text-align: left;
+}
+
+
+
+

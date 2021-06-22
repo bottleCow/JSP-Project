@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="commentns">
+	<select id="selectList" parameterType="map" resultType="comment">
+		select
+		c.*, a.member_nickname, null, null, (select count(*) from commentsRecom cr where c.board_num = cr.board_num
+		and c.article_num = cr.article_num and c.comment_num = cr.comment_num) comment_recom from comments c, member a where
+		c.member_num=a.member_num and c.board_num=${board_num} and
+		c.article_num=${article_num}
+		order by comment_num
+	</select>
+	<select id="selectMyList" parameterType="map"
+		resultType="comment">
+		select * from (select rowNum rn, e.* from (select c.*, null, 
+		b.board_name, a.article_title, (select count(*) from commentsRecom cr where c.board_num = cr.board_num
+		and c.article_num = cr.article_num and c.comment_num = cr.comment_num) comment_recom from comments c, board b, article a
+		where c.member_num=${member_num} and c.board_num=b.board_num and c.board_num=a.board_num and 
+		c.article_num = a.article_num order by c.comment_date desc) e) where rn
+		between ${startRow} and ${endRow}
+	</select>
+	<insert id="insert" parameterType="comment">
+		<selectKey keyProperty="comment_num" order="BEFORE"
+			resultType="integer">
+			select nvl(max(comment_num), 0) + 1 comment_num from
+			comments where board_num=#{board_num} and article_num=#{article_num}
+		</selectKey>
+		insert into comments values(#{board_num}, #{article_num},
+		#{comment_num}, #{member_num}, #{comment_content}, to_char(sysdate,
+		'RRRR.MM.DD HH24:MI:SS'), 'n')
+	</insert>
+	<select id="myTotal" parameterType="int" resultType="int">
+		select
+		count(*) from comments where member_num=#{member_num}
+	</select>
+	<update id="delete" parameterType="int">
+		update comments set
+		comment_del='y' where comment_num=#{comment_num}
+	</update>
+	<update id="deleteArticle" parameterType="map">
+		update comments set comment_del='y' where article_num=${article_num} and
+		board_num=${board_num}
+	</update>
+	<insert id="addRecom" parameterType="map">
+		insert into commentsRecom
+		values(${member_num}, ${board_num}, ${article_num}, ${comment_num})
+	</insert>
+	<select id="findRecom" parameterType="map" resultType="int">
+		select
+		member_num from commentsRecom where member_num=${member_num} and
+		board_num=${board_num} and article_num=${article_num} and comment_num=${comment_num}
+	</select>
+</mapper> 

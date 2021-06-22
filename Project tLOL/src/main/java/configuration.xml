@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="dbconnect.properties" />
+	<typeAliases>
+		<!-- ch17.model.Member를 짧게 member -->
+		<typeAlias alias="member" type="tLOL.model.Member" />
+		<typeAlias alias="article" type="tLOL.model.Article" />
+		<typeAlias alias="board" type="tLOL.model.Board" />
+		<typeAlias alias="comment" type="tLOL.model.Comment" />
+	</typeAliases>
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="member.xml" />
+		<mapper resource="article.xml" />
+		<mapper resource="board.xml" />
+		<mapper resource="comment.xml" />
+	</mappers>
+</configuration>
