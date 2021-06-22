@@ -56,5 +56,5 @@ Web Application Server == Apache Tomcat-9.0 🐈
 ^ 게시판 댓글 작성 / 추천 기능 ^
 
 ![summernote](https://user-images.githubusercontent.com/84126480/122905137-ee7cc000-d38b-11eb-9339-3c2ea15eb0b0.jpg)
-
+^게시글 작성 summernote ^
 
