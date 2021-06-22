@@ -42,14 +42,19 @@ Web Application Server == Apache Tomcat-9.0 🐈
 ## 🖥주요 화면🖥
 ![summoner](https://user-images.githubusercontent.com/84126480/122905173-f2a8dd80-d38b-11eb-83b9-e7eba0bdc2e7.jpg)
 ^ 소환사 검색 결과창 ^
+
 ![loginPage](https://user-images.githubusercontent.com/84126480/122904867-b2e1f600-d38b-11eb-8c1b-45235104e5f3.jpg)
 ^ 로그인 페이지 ^
+
 ![option](https://user-images.githubusercontent.com/84126480/122904973-c68d5c80-d38b-11eb-8e24-245ac08a4ab0.jpg)
 ^ Drop Down Menu ^
+
 ![community](https://user-images.githubusercontent.com/84126480/122905035-d73dd280-d38b-11eb-8182-b7f75c4f8dce.jpg)
 ^ 게시판 페이지 ^
+
 ![community2](https://user-images.githubusercontent.com/84126480/122905087-e45ac180-d38b-11eb-9931-20d804d1a890.jpg)
 ^ 게시판 댓글 작성 / 추천 기능 ^
+
 ![summernote](https://user-images.githubusercontent.com/84126480/122905137-ee7cc000-d38b-11eb-9339-3c2ea15eb0b0.jpg)
 
 
