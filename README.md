@@ -23,7 +23,7 @@
 4.페이지 전체 UI관리(Bootstrap 5.0.1, css)
 
 5.중복되는 페이지 sitemesh decorators.xml을 통해 관리
-... 
+... And more
 
 
 🙋‍♂️곽승민 (API)
