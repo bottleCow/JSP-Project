@@ -11,8 +11,15 @@
 -Riot에서 정식 API key를 승인받기까지 3주정도의 긴 시간이 걸렸으며 메인페이지(main.jsp) 검색창에서 소환사 이름을 검색하게되면 입력된 값이 summonerName 인자로 들어가게 되어 결과를 출력하게 됩니다.
 
 ## Member
+-강병우
+
 -곽승민
 
 -김영찬
 
 ## 개발 환경
+-OS == Window10
+
+-Developing Tool == Eclipse IDE
+
+-Data Base == Oracle 11g
