@@ -47,7 +47,7 @@ Web Application Server == Apache Tomcat-9.0 🐈
 ^ 로그인 페이지 ^
 
 ![option](https://user-images.githubusercontent.com/84126480/122904973-c68d5c80-d38b-11eb-8e24-245ac08a4ab0.jpg)
-^ Drop Down Menu ^
+< Drop Down Menu <
 
 ![community](https://user-images.githubusercontent.com/84126480/122905035-d73dd280-d38b-11eb-8182-b7f75c4f8dce.jpg)
 ^ 게시판 페이지 ^
